@@ -23,7 +23,7 @@ resource azurerm_network_interface NIC-Webserver {
 	}
 }
 
-resource "azurerm_virtual_machine" "webserver" {
+resource "azurerm_Linux_virtual_machine" "webserver" {
   name                = "Webserver"
   resource_group_name = azurerm_resource_group.Workshop1.name
   location            = azurerm_resource_group.Workshop1.location
