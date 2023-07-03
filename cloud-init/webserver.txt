@@ -1,0 +1,48 @@
+#cloud-config
+users:
+  - default
+  - name: workshopadmin
+    gecos: workshopadmin
+    primary_group: admin
+    groups: users
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    lock_passwd: false
+    passwd: $y$j9T$8TDsAZHi0cxeXEimHRuYm.$WyJFkLkvyCf2xhxkMKeF/XVmSLgiJl6q.mchlyV2GEA
+package upgrade: true
+package_upgrade: true
+packages:
+  - apache2
+  - nodejs
+  - npm
+  - 
+runcmd:
+  - sudo mkdir /source && cd /source
+  - sudo mkdir /nodeProject
+  - sudo npm init -y 
+  - sudo npm install -g express
+  - sudo npm install @azure/storage-blob
+  - sudo npm install cors
+  - sudo npm install body-parser
+
+
+  - sudo service apache2 start
+
+
+  - sudo wget https://east0us0primary.blob.core.windows.net/shares/TelNetWebserver.tgz
+  - sudo tar -xvf TelNetWebserver.tgz -C /
+  - sudo mv /source/000-default.conf /etc/apache2/sites-enabled/
+  - sudo mkdir /var/www/wordpress
+  - sudo mv /source/wordpress/* /var/www/wordpress/
+  - sudo a2enmod rewrite
+  - sudo apache2ctl configtest
+  - sudo systemctl reload apache2
+  - sudo systemctl restart apache2.service
+  - sudo setfacl -m u:www-data:--- /bin/cat
+  - sudo setfacl -m u:www-data:--- /bin/more
+  - sudo setfacl -m u:www-data:--- /bin/less
+write_files:
+  - path: /var/www/old_index.html
+    permissions: "0644"
+    content: |
+      flag: CT{H4rd22222222f1nDDd}
+    owner: www-data:www-data
