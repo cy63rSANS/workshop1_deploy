@@ -17,6 +17,7 @@ packages:
 runcmd:
   - sudo mkdir /source
   - cd /source
+  - sudo rm -r /var/www/html
   - sudo mkdir /nodeProject
   - sudo npm init -y 
   - sudo npm install -g express
@@ -25,10 +26,7 @@ runcmd:
   - sudo npm install body-parser
   - sudo service apache2 start
   - sudo wget https://ws1clsansfire.blob.core.windows.net/workshopcode/website_code.tar
-  - sudo tar -xvf website_code.tar -C /
-  - sudo cp -r /source/website_code /var/www/
-  - sudo rm -r /var/www/html
-  - sudo mv /var/www/website_code /var/www/html
+  - sudo tar -xvf website_code.tar -C /var/www/html
   - sudo a2enmod rewrite
   - sudo apache2ctl configtest
   - sudo systemctl reload apache2
