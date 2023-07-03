@@ -26,7 +26,7 @@ runcmd:
   - sudo service apache2 start
   - cd /source
   - sudo wget https://ws1clsansfire.blob.core.windows.net/workshopcode/website_code.tar
-  - sudo tar -xvfj website_code.tar -C /var/www/
+  - sudo tar -xvf website_code.tar -C /var/www/
   - sudo mv /var/www/website_code /var/www/html
   - sudo mv /var/www/html/search5.js /nodeProject/
   - sudo a2enmod rewrite
