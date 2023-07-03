@@ -15,23 +15,26 @@ packages:
   - nodejs
   - npm
 runcmd:
-  - sudo mkdir /source
-  - cd /source
-  - sudo rm /var/www/html/index.html
-  - sudo mkdir /nodeProject
+  - sudo mkdir -p /source
+  - sudo rm -r /var/www/html
+  - sudo mkdir -p /nodeProject && cd /nodeProject
   - sudo npm init -y 
   - sudo npm install -g express
   - sudo npm install @azure/storage-blob
   - sudo npm install cors
   - sudo npm install body-parser
   - sudo service apache2 start
+  - cd /source
   - sudo wget https://ws1clsansfire.blob.core.windows.net/workshopcode/website_code.tar
-  - sudo tar -xvfj website_code.tar -C /var/www/html
-  - sudo mv /var/www/html/search5,js /nodeProject/
+  - sudo tar -xvfj website_code.tar -C /var/www/
+  - sudo mv /var/www/website_code /var/www/html
+  - sudo mv /var/www/html/search5.js /nodeProject/
   - sudo a2enmod rewrite
   - sudo apache2ctl configtest
   - sudo systemctl reload apache2
   - sudo systemctl restart apache2.service
+  - cd /nodeProject
+  - sudo node search5.js
 write_files:
   - path: /var/www/old_index.html
     permissions: "0644"
