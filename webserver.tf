@@ -34,6 +34,12 @@ resource "azurerm_virtual_machine" "webserver" {
     disable_password_authentication = false
   }
 
+  os_profile {
+    computer_name = "Workshop_vm1"
+    admin_username = "workshopadmin"
+    custom_data = local.userdata
+  }
+
   storage_os_disk {
       name          = "webserver"
       create_option = "FromImage"
@@ -48,5 +54,5 @@ resource "azurerm_virtual_machine" "webserver" {
     sku       = "20_04-lts"
     version   = "20.04.202208100"
   }
-  custom_data = local.userdata
+
 }
