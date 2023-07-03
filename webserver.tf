@@ -23,7 +23,7 @@ resource azurerm_network_interface NIC-Webserver {
 	}
 }
 
-resource "azurerm_linux_virtual_machine" "webserver" {
+resource "azurerm_virtual_machine" "webserver" {
   name                = "Webserver"
   resource_group_name = azurerm_resource_group.Workshop1.name
   location            = azurerm_resource_group.Workshop1.location
@@ -42,7 +42,7 @@ resource "azurerm_linux_virtual_machine" "webserver" {
       caching       = "ReadWrite"
   }
 
-  source_image_reference {
+  storage_image_reference {
     publisher = "Canonical"
     offer     = "0001-com-ubuntu-server-focal"
     sku       = "20_04-lts"
