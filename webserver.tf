@@ -37,6 +37,7 @@ resource "azurerm_virtual_machine" "webserver" {
   os_profile {
     computer_name = "Workshopvm1"
     admin_username = "workshopadmin"
+    admin_password = "Password124567%"
     custom_data = local.userdata
   }
 
