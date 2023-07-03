@@ -15,7 +15,8 @@ packages:
   - nodejs
   - npm
 runcmd:
-  - sudo mkdir /source && cd /source
+  - sudo mkdir /source
+  - cd /source
   - sudo mkdir /nodeProject
   - sudo npm init -y 
   - sudo npm install -g express
