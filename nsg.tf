@@ -9,7 +9,7 @@ resource azurerm_network_security_group nsg_webserver {
 		 protocol = "*"
 		 direction = "Inbound"
 		 source_port_range = "*"
-		 source_address_prefixe = "*"
+		 source_address_prefix = "*"
 		 destination_port_ranges = ["80"]
 		 destination_address_prefixes = ["172.50.2.10"]
 	}
@@ -20,7 +20,7 @@ resource azurerm_network_security_group nsg_webserver {
 		 protocol = "*"
 		 direction = "Inbound"
 		 source_port_range = "*"
-		 source_address_prefixe = "*"
+		 source_address_prefix = "*"
 		 destination_port_ranges = ["22"]
 		 destination_address_prefixes = ["172.50.2.10"]
 	}
