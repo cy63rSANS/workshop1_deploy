@@ -1,5 +1,5 @@
 resource "azurerm_log_analytics_workspace" "fAirLineLogs" {
-  name                = "FAitLine_Logs"
+  name                = "fairlinelogs"
 	location = var.Location
 	resource_group_name = var.ResG	
   sku                 = "PerGB2018"

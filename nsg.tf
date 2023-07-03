@@ -32,5 +32,5 @@ resource azurerm_network_security_group nsg_webserver {
 }
 resource azurerm_subnet_network_security_group_association sNet-Asoc1 {
 	subnet_id = "${azurerm_subnet.sNet-1.id}"
-	network_security_group_id = "${azurerm_network_security_group.sNet-Asoc1.id}"
+	network_security_group_id = "${azurerm_network_security_group.nsg_webserver.id}"
 }

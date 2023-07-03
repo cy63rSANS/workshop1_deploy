@@ -11,7 +11,7 @@ resource "azurerm_storage_account" "storagestijr" {
   location                 = var.Location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-  allow_blob_public_access = true
+  public_network_access_enabled = true
   depends_on = [azurerm_resource_group.Workshop1]
 
   tags = {

@@ -12,7 +12,7 @@ resource azurerm_network_interface NIC-Webserver {
 	 #depends_on 	=	[azurerm_linux_virtual_machine.KaliWS]
 	 ip_configuration {
 		 name = "nicws1"
-		 subnet_id = "${azurerm_subnet.sNet1.id}"
+		 subnet_id = "${azurerm_subnet.sNet-1.id}"
 		 private_ip_address = "172.50.2.10"
 		 private_ip_address_allocation = "Static"
          public_ip_address_id = azurerm_public_ip.PIP-Webserver.id
