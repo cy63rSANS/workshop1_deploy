@@ -35,7 +35,7 @@ resource "azurerm_virtual_machine" "webserver" {
   }
 
   os_profile {
-    computer_name = "Workshop_vm1"
+    computer_name = "Workshopvm1"
     admin_username = "workshopadmin"
     custom_data = local.userdata
   }
