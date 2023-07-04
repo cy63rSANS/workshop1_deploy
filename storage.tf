@@ -27,7 +27,7 @@ resource "azurerm_storage_container" "coupons" {
 resource "azurerm_storage_blob" "coupons" {
   for_each = fileset(path.module, "flight_coupons/*")
  
-  name                   = trim(each.key, "flight_coupons/")
+  name                   = fileset(each.key, "flight_coupons/")
   storage_account_name   = azurerm_storage_account.storagestijr.name
   storage_container_name = azurerm_storage_container.coupons.name
   type                   = "Block"
