@@ -67,6 +67,3 @@ resource "azurerm_virtual_machine" "webserver" {
 output "vm_password" {
   value = random_string.vmpassword.id
 }
-output "vm_username" {
-  value = azurerm_virtual_machine.webserver.admin_username.value
-}
