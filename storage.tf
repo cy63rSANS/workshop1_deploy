@@ -24,3 +24,12 @@ resource "azurerm_storage_container" "coupons" {
   container_access_type = "blob"
   depends_on = [azurerm_storage_account.storagestijr]
 }
+resource "azurerm_storage_blob" "coupons" {
+  for_each = fileset(path.module, "flight_coupons/*")
+ 
+  name                   = trim(each.key, "flight_coupons/")
+  storage_account_name   = azurerm_storage_account.storagestijr.name
+  storage_container_name = azurerm_storage_container.coupons.name
+  type                   = "Block"
+  source                 = each.key
+}
