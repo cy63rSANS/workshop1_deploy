@@ -34,8 +34,8 @@ resource "azurerm_storage_blob" "coupons" {
   source                 = each.key
 }
 output "storage_account_primary_access_key" {
-  value = data.azurerm_storage_account.storagestijr.primary_access_key
+  value = azurerm_storage_account.storagestijr.primary_access_key
 }
 output "storage_account_name" {
-  value = data.azurerm_storage_account.storagestijr.name
+  value = azurerm_storage_account.storagestijr.name
 }
