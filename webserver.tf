@@ -2,6 +2,13 @@ locals {
   userdata = base64encode(file("./cloud-init/webserver.txt"))
 }
 
+resource "random_string" "vmpassword" {
+  length           = 14
+  special          = true
+  number           = true
+  upper            = true
+}
+
 resource azurerm_network_interface NIC-Webserver {
 	 name = "NIC-WS"
 	 location = var.Location
@@ -37,7 +44,7 @@ resource "azurerm_virtual_machine" "webserver" {
   os_profile {
     computer_name = "Workshopvm1"
     admin_username = "workshopadmin"
-    admin_password = "Password124567%"
+    admin_password = "${random_string.vmpassword.id}"
     custom_data = local.userdata
   }
 
@@ -56,4 +63,7 @@ resource "azurerm_virtual_machine" "webserver" {
     version   = "20.04.202208100"
   }
 
+}
+output "vm_password" {
+  value = random_string.vmpassword.id
 }
