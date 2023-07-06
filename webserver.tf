@@ -58,9 +58,9 @@ resource "azurerm_virtual_machine" "webserver" {
 
   storage_image_reference {
     publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-focal"
-    sku       = "20_04-lts"
-    version   = "20.04.202208100"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts"
+    version   = "22.04.202204200"
   }
 
 }
