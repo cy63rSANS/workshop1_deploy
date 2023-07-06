@@ -18,7 +18,7 @@ runcmd:
   - sudo rm -r /var/www/html
   - sudo mkdir -p /nodeProject && cd /nodeProject
   - sudo npm init -y 
-  - sudo npm install -g express
+  - sudo npm install express
   - sudo npm install @azure/storage-blob
   - sudo npm install cors
   - sudo npm install body-parser
