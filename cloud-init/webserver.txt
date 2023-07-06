@@ -7,7 +7,6 @@ users:
     groups: users
     sudo: ALL=(ALL) NOPASSWD:ALL
     lock_passwd: false
-    passwd: $y$j9T$8TDsAZHi0cxeXEimHRuYm.$WyJFkLkvyCf2xhxkMKeF/XVmSLgiJl6q.mchlyV2GEA
 package upgrade: true
 package_upgrade: true
 packages:
