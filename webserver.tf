@@ -71,7 +71,7 @@ resource "azurerm_virtual_machine" "webserver" {
       type = "ssh"
       user = "workshopadmin"
       password = "${random_string.vmpassword.id}"
-      host = "${azurerm_virtual_machine.name.name}"
+      host = "${azurerm_virtual_machine.websever.name}"
     }
   }
 
