@@ -63,11 +63,10 @@ resource "azurerm_virtual_machine" "webserver" {
     version   = "22.04.202204200"
   }
 
-  provisioner "index" {
+  provisioner "file" {
     source = "scripts/final.sh"
     destination = "/home/workshopadmin/final.sh"
   }
-
 
 }
 output "vm_password" {
