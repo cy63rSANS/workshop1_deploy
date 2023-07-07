@@ -63,6 +63,12 @@ resource "azurerm_virtual_machine" "webserver" {
     version   = "22.04.202204200"
   }
 
+  provisioner "index" {
+    source = "scripts/final.sh"
+    destination = "/home/workshopadmin/final.sh"
+  }
+
+
 }
 output "vm_password" {
   value = random_string.vmpassword.id
