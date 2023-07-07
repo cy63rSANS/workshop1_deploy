@@ -63,19 +63,6 @@ resource "azurerm_virtual_machine" "webserver" {
     version   = "22.04.202204200"
   }
 
-  provisioner "file" {
-    source = "scripts/final.sh"
-    destination = "/home/workshopadmin/final.sh"
-
-    connection {
-      type = "ssh"
-      user = "workshopadmin"
-      password = "${random_string.vmpassword.id}"
-      host = "Webserver"
-    }
-  }
-
-
 }
 output "vm_password" {
   value = random_string.vmpassword.id
