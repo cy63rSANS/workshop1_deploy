@@ -9,7 +9,7 @@ terraform {
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
-  features {}
+  features {
       virtual_machine {
         delete_os_disk_on_deletion     = true
         graceful_shutdown              = false
@@ -17,5 +17,6 @@ provider "azurerm" {
       }
       log_analytics_workspace {
         permanently_delete_on_destroy = true
-    }
+    } 
+  }
 }
