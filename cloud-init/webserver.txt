@@ -32,8 +32,6 @@ runcmd:
   - sudo apache2ctl configtest
   - sudo systemctl reload apache2
   - sudo systemctl restart apache2.service
-  - cd /nodeProject
-  - sudo node search5.js
 write_files:
   - path: /var/www/old_index.html
     permissions: "0644"
