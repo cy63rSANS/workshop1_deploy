@@ -10,7 +10,7 @@ resource azurerm_network_security_group nsg_webserver {
 		 direction = "Inbound"
 		 source_port_range = "*"
 		 source_address_prefix = "*"
-		 destination_port_ranges = ["80, 3000"]
+		 destination_port_ranges = ["80", "3000"]
 		 destination_address_prefixes = ["172.50.2.10"]
 	}
 	 security_rule {
