@@ -6,9 +6,9 @@ key=$(az storage account keys list -g SANSWorkshop -n $storage | jq -r .[0].valu
 ip=$(az network public-ip list -g SANSWorkshop | jq -r .[].ipAddress)
 
 az vm run-command invoke -g SANSWorkshop -n Webserver --command-id RunShellScript --scripts 'sed -i 's/IPADDR/$ip/g' /var/www/html/index.html'
-az vm run-command invoke -g SANSWorkshop-n Webserver --command-id RunShellScript --scripts 'sed -i 's/ACCNAME/$storage/g' /nodeProject/search5.js'
+az vm run-command invoke -g SANSWorkshop -n Webserver --command-id RunShellScript --scripts 'sed -i 's/ACCNAME/$storage/g' /nodeProject/search5.js'
 az vm run-command invoke -g SANSWorkshop -n Webserver --command-id RunShellScript --scripts 'sed -i 's@ACCKEY@$key@g' /nodeProject/search5.js'
-az vm run-command invoke -g SANSWorkshop -n Webserver --command-id RunShellScript --scripts '/nodeProject/start.sh'
+az vm run-command invoke -g SANSWorkshop -n Webserver --command-id RunShellScript --scripts '/nodeProject/start.sh &'
 
 echo "Address of the Webserver = http://$ip"
 echo "Storage Account name = $storage"

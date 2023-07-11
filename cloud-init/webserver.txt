@@ -38,5 +38,5 @@ write_files:
     content: |
       #!/bin/bash
       killall node
-      node /nodeProject/search5 > /dev/null
+      node /nodeProject/search5
     owner: workshopadmin:workshopadmin
