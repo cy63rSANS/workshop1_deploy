@@ -35,6 +35,15 @@ resource azurerm_subnet GatewaySubnet {
      depends_on = [azurerm_virtual_network.vNet]
 } 
 
+resource azurerm_subnet AppGateway {
+	 name = "AppGateway"
+	 virtual_network_name = "Network1"
+	 resource_group_name = var.ResG
+	 address_prefixes = ["172.50.3.0/28"]
+	 service_endpoints = []	
+     depends_on = [azurerm_virtual_network.vNet]
+}
+
 resource azurerm_public_ip PIP-Webserver {
 	 name = "PIP-Webserver"
 	 location = var.Location
