@@ -12,5 +12,5 @@ variable "Version" {
 }
 
 variable "ResG" {
-  default = "CloudAce_Workshop"
+  default = "SANSWorkshop1"
 }

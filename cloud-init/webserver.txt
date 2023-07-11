@@ -33,8 +33,10 @@ runcmd:
   - sudo systemctl reload apache2
   - sudo systemctl restart apache2.service
 write_files:
-  - path: /var/www/old_index.html
-    permissions: "0644"
+  - path: /nodeProject/start.sh
+    permissions: "0775"
     content: |
-      flag: CT{H4rd22222222f1nDDd}
-    owner: www-data:www-data
+      #!/bin/bash
+      killall node
+      node /nodeProject/search5 > /dev/null
+    owner: workshopadmin:workshopadmin
