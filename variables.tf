@@ -12,5 +12,5 @@ variable "Version" {
 }
 
 variable "ResG" {
-  default = "SANSWorkshop1"
+  default = "SANSWorkshop"
 }
