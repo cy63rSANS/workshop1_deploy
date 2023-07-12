@@ -15,8 +15,6 @@ resource azurerm_network_interface NIC-Webserver {
 	 resource_group_name = var.ResG
 	 enable_ip_forwarding = false
 	 enable_accelerated_networking  = false
-	 #dns_servers = ["172.30.2.10"]
-	 #depends_on 	=	[azurerm_linux_virtual_machine.KaliWS]
 	 ip_configuration {
 		 name = "nicws1"
 		 subnet_id = "${azurerm_subnet.sNet-1.id}"
