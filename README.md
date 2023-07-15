@@ -13,7 +13,7 @@
 
 1. Log into Azure and open a cloud shell
 2. clone this repository
-    `git clone https://github.com/cy63rSANS/workshop1_deploy'
+    `git clone https://github.com/cy63rSANS/workshop1_deploy`
 3. Execute terraform init and terraform apply
     `terraform init`
     `terraform apply`
