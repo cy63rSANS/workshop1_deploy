@@ -65,3 +65,7 @@ resource "azurerm_virtual_machine" "webserver" {
 output "vm_password" {
   value = random_string.vmpassword.id
 }
+
+output azurerm_public_ip {
+	value = azurerm_public_ip.PIP-Webserver.ip_address
+}

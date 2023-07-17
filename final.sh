@@ -10,6 +10,6 @@ az vm run-command invoke -g SANSWorkshop -n Webserver --command-id RunShellScrip
 az vm run-command invoke -g SANSWorkshop -n Webserver --command-id RunShellScript --scripts 'sed -i 's@ACCKEY@$key@g' /nodeProject/search5.js'
 az vm run-command invoke -g SANSWorkshop -n Webserver --command-id RunShellScript --scripts '/nodeProject/start.sh &'
 
-echo "Address of the Webserver = http://$ip"
-echo "Storage Account name = $storage"
-echo "storage account key = <best not to print these>"
+echo "Webserver Address = http://$ip"
+echo "Storage Account = $storage"
+echo "Storage Account Key = <best not to print these>"
