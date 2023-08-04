@@ -27,7 +27,7 @@ runcmd:
   - sudo wget https://ws1clsansfire.blob.core.windows.net/workshopcode/website_code.tar
   - sudo tar -xvf website_code.tar -C /var/www/
   - sudo mv /var/www/website_code /var/www/html
-  - sudo mv /var/www/html/search5.js /nodeProject/
+  - sudo mv /var/www/html/api.js /nodeProject/
   - sudo a2enmod rewrite
   - sudo apache2ctl configtest
   - sudo systemctl reload apache2
@@ -38,5 +38,5 @@ write_files:
     content: |
       #!/bin/bash
       killall node
-      node /nodeProject/search5
+      node /nodeProject/api
     owner: workshopadmin:workshopadmin
