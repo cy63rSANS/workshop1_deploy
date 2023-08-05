@@ -8,7 +8,7 @@ variable "Location" {
 }
 
 variable "Version" {
-  default = "V1.2"
+  default = "V1.3"
 }
 
 variable "ResG" {

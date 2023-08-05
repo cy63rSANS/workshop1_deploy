@@ -56,6 +56,7 @@ resource azurerm_public_ip PIP-Webserver {
 
 output azurerm_public_ip {
 	value = azurerm_public_ip.PIP-Webserver.ip_address
+	depends_on = [azurerm_virtual_machine.webserver]
 }
 
 
