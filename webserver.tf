@@ -5,7 +5,7 @@ locals {
 resource "random_string" "vmpassword" {
   length           = 14
   special          = true
-  number           = true
+  numeric          = true
   upper            = true
 }
 
