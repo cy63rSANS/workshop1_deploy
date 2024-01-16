@@ -19,4 +19,4 @@ echo "Storage Account = $storage"
 echo "Storage Account Key = <best not to print these>"
 
 echo "Updating LoggingData.ps1 with your subscription information"
-sed -i s/SUB/$sub@g LoggingData.ps1
+sed -i s/SUB/$sub/g LoggingData.ps1
